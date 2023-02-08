@@ -1,0 +1,12 @@
+﻿
+<h1>Upload Blob, Container: @ViewData["CONTAINERNAME"]</h1>
+
+<a asp-controller="AzureBlobs" asp-action="ListBlobs" asp-route-containername="@ViewData["CONTAINERNAME"]" >
+    Volver a blobs de @ViewData["CONTAINERNAME"]
+</a>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" class="form-control" required/>
+    <button class="btn btn-outline-dark" style="border-style">
+        Upload File
+    </button>
+</form>

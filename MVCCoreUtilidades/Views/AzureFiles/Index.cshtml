@@ -1,0 +1,32 @@
+﻿@model List<string>
+
+<h1 style="color:crimson">Azure Storage Files</h1>
+
+<a asp-controller="AzureFiles"
+    asp-action="UploadFile">
+    Subir Fichero a Azure Files
+</a>
+
+<ul class="list-group">
+    @foreach (string file in Model)
+    {
+        <li class="list-group-item">
+            @file
+            <a asp-controller="AzureFiles"
+            asp-action="Index"
+            asp-route-filename="@file" 
+            class="btn btn-info">
+            Leer
+        </a>
+        <a asp-controller="AzureFiles"
+            asp-action="DeleteFile"
+            asp-route-filename="@file"
+            class="btn btn-danger">
+            Delete
+        </a>
+        </li>
+    }
+</ul>
+<p style="color:goldenrod">
+    @ViewData["DATA"]
+</p>
